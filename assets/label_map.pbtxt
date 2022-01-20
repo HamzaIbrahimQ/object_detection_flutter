@@ -1,0 +1,9 @@
+item {
+    id: 1
+    name: 'Drain'
+}
+
+item {
+    id: 2
+    name: 'Pothole'
+}

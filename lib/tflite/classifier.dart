@@ -17,8 +17,11 @@ class Classifier {
   /// Labels file loaded as list
   List<String> _labels;
 
-  static const String MODEL_FILE_NAME = "detect.tflite";
-  static const String LABEL_FILE_NAME = "labelmap.txt";
+  // static const String MODEL_FILE_NAME = "detect.tflite";
+  // static const String LABEL_FILE_NAME = "labelmap.txt";
+
+  static const String MODEL_FILE_NAME = "AbModel_v1.tflite";
+  static const String LABEL_FILE_NAME = "new_model_labels_created_by_hamza.txt";
 
   /// Input size of image (height = width = 300)
   static const int INPUT_SIZE = 300;
@@ -121,7 +124,7 @@ class Classifier {
 
     // Inputs object for runForMultipleInputs
     // Use [TensorImage.buffer] or [TensorBuffer.buffer] to pass by reference
-    List<Object> inputs = [inputImage.buffer];
+    List<Object> inputs = [inputImage.buffer.asUint8List()];
 
     // Outputs map
     Map<int, Object> outputs = {
